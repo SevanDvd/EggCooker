@@ -73,9 +73,20 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
         <View style={styles.eggsContainer}>
-          <SvgXml xml={HardEggSvg} style={styles.egg}/>
-          <SvgXml xml={SoftEggSvg} style={styles.egg}/>
-          <SvgXml xml={SoftEggShellSvg} style={styles.egg}/>
+          <View style={styles.egg}>
+            <SvgXml xml={HardEggSvg}/>
+            <Text style={styles.eggText}>Hard Boiled</Text>
+          </View>
+          
+          <View style={styles.egg}>
+            <SvgXml xml={SoftEggSvg}/>
+            <Text style={styles.eggText}>Soft Boiled</Text>
+          </View>
+          
+          <View style={styles.egg}>
+            <SvgXml xml={SoftEggShellSvg}/>
+            <Text style={styles.eggText}>Soft Boiled Egg</Text>
+          </View>
         </View>
     </View> 
   );
@@ -100,7 +111,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   egg:{
+    alignItems: 'center',
     width: 115,
     height: 115,
+  },
+  eggText: {
+    margin : 10,
+    fontSize: 15,
+    textAlign: 'center',
   }
 });
